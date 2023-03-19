@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+  <title>Frontend Mentor | Notifications page</title>
+
+</head>
+<body>
+
+
+  <div class="main-cont">
+    
+    <div class="not-mark">
+      <div class="headerM">
+        <h2>Notifications </h2>
+        <div id="mesg-Num">3</div>
+      </div>
+      
+      <div class="markM" id="unmark">
+        Mark all as read
+      </div>
+    </div>
+
+    <div>
+      
+      <div class="mesg unread">
+        
+        <div class="img-cont">
+          <img src="assets/images/avatar-mark-webber.webp" alt="mark webber">
+        </div>
+        <div class="mesg-text">
+          <div class="mesg-text-sec">
+             <span class="name">Mark Webber</span> reacted to your recent post <span class="post">My first tournament today!</span><span class="dot"></span>
+          </div>
+          <div>
+            1m ago
+          </div>
+        </div>
+      </div>
+
+
+      <!-- angela message -->
+      <div class="mesg unread">
+        
+        <div class="img-cont">
+          <img src="assets/images/avatar-angela-gray.webp" alt="mark webber">
+        </div>
+        <div class="mesg-text">
+          <div class="mesg-text-sec">
+             <span class="name">Mark Webber</span> followed you <span class="dot"></span>
+          </div>
+          <div>
+            5m ago
+          </div>
+        </div>
+      </div>
+
+      <!-- john thompson -->
+
+      <div class="mesg unread">
+        
+        <div class="img-cont">
+          <img src="assets/images/avatar-jacob-thompson.webp" alt="mark webber">
+        </div>
+        <div class="mesg-text">
+          <div class="mesg-text-sec">
+             <span class="name">Jacob Thompson</span> has joined your group <span class="group">Chess Club</span>
+          </div>
+          <div>
+            1 day ago
+          </div>
+        </div>
+      </div>
+
+      <!-- Rizky Message -->
+
+        <div class="mesg">
+        
+          <div class="img-cont">
+            <img src="assets/images/avatar-rizky-hasanuddin.webp" alt="mark webber">
+          </div>
+          <div class="mesg-text">
+            <div>
+               <span class="name">Rizky Hasanuddin</span> sent you a private message
+            </div>
+            <div>
+              5 days ago
+            </div> 
+
+            <div class="rizty-mesg">
+              Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+              I'm already having lots of fun and improving my game.
+            </div>    
+          </div>
+        </div>
+        
+      <!-- kimberly -->
+
+      <div class="mesg">
+        
+        <div class="img-cont">
+          <img src="assets/images/avatar-kimberly-smith.webp" alt="mark webber">
+        </div>
+        <div class="mesg-text kim-picture">
+          <div>
+            <div>
+             <span class="name">Kimberly Smith</span> commented on your picture 
+            </div>
+            <div>
+              1 week ago
+            </div>
+          </div>
+
+          <!-- <div class="chess-img"> -->
+            <img src="assets/images/image-chess.webp" alt="picture post">
+          <!-- </div> -->
+        </div>
+      </div>
+
+
+      <!--  Nathan Peterson-->
+
+      <div class="mesg">
+        
+        <div class="img-cont">
+          <img src="assets/images/avatar-nathan-peterson.webp" alt="mark webber">
+        </div>
+        <div class="mesg-text">
+          <div>
+             <span class="name">Nathan Peterson </span> reacted to your recent post <span class="post">5 end-game strategies to increase your win rate</span>
+          </div>
+          <div>
+            2 weeks ago
+          </div>
+        </div>
+      </div>
+
+
+      <!--  Anna kim-->
+
+      <div class="mesg">
+        
+        <div class="img-cont">
+          <img src="assets/images/avatar-anna-kim.webp" alt="mark webber">
+        </div>
+        <div class="mesg-text">
+          <div>
+             <span class="name">Jacob Thompson</span> left the group <span class="group">Chess Club</span>
+          </div>
+          <div>
+            2 weeks ago
+          </div>
+        </div>
+      </div>
+
+    
+    </div>
+  </div>
+ 
+
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.frontendmentor.io/profile/chinaza-Sommie">Chinaza_chisom</a>. 
+  </div>
+
+  <script>
+
+    var unread = document.querySelectorAll('.unread');
+    const unmark = document.getElementById("unmark");
+    var mesgNum = document.getElementById("mesg-Num");
+
+    unread.forEach((read) => {
+      read.addEventListener("click", () =>{
+        read.classList.remove('unread');
+        const newunread = document.querySelectorAll('.unread');
+        mesgNum.innerHTML= newunread.length;
+      })
+    });
+
+
+    unmark.addEventListener("click", () => {
+      unread.forEach((read) => {
+        read.classList.remove('unread');
+        const newunread = document.querySelectorAll('unread');
+        mesgNum.innerHTML = newunread.length;
+      })
+    })
+
+  </script>
+</body>
+</html>
